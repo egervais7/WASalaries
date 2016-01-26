@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var AnnualSalarySchema = new mongoose.Schema({
+var state_workersSchema = new mongoose.Schema({
   Agency_Title: String,
   Agy: Number,
   employee_name: String,
@@ -11,4 +11,4 @@ var AnnualSalarySchema = new mongoose.Schema({
   Sal2014: Number
 });
 
-module.exports = mongoose.model('state_workers', AnnualSalarySchema);
+module.exports = mongoose.model('state_workers', state_workersSchema);
