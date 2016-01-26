@@ -11,4 +11,12 @@ router.route('/')
     });
   });
 
+router.route('/:id')
+  .get(function(req, res) {
+    Worker.findById(req.params.id, function(error, worker) {
+      if (error) return res.status(500).send(error);
+      res.json(worker);
+    });
+  });
+
 module.exports = router;
