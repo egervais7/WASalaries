@@ -1,1 +1,14 @@
 <h1>Home</h1>
+
+<div class="form-group">
+  <form>
+    <label for="search">Search</label>
+    <input type="text" class="form-control" id="search" ng-model="search">
+    <input type="submit">
+  </form>
+</div>
+
+<div class="well" ng-repeat="salary in salaries track by salary._id" ng-if="$index < 10">
+  <h1>{{salary.employee_name}} <br>
+    Job Title : {{salary.job_title}} <br><small>2014 salary : {{salary.Sal2014 | currency}}</h1>
+</div>
