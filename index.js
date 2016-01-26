@@ -5,13 +5,15 @@ var path = require('path');
 var app = express();
 
 var mongoose = require('mongoose');
+var AnnualSalary = require('./models/annual_salary');
+mongoose.connect('mongodb://localhost/state_workers');
 
 app.use(express.static(path.join(__dirname + 'public')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/api/state_worker',
+app.use('/api/state_workers',
   require('./controllers/state_worker'));
 
 app.get('/*', function(req, res){

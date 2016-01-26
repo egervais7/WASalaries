@@ -5,9 +5,9 @@ var router = express.Router();
 
 router.route('/')
   .get(function(req, res){
-    Worker.find(function(error, workers){
-      if (error) return;
-      res.status(500).send(error);
+    Worker.find({}, function(error, workers){
+      if (error) return res.status(500).send(error);
+      console.log(error, workers)
       res.send(workers);
     });
   });
