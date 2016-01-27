@@ -26,6 +26,11 @@
   margin-top: 25px;
 }
 
+.salaries {
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+}
+
 .name {
   color: rgb(88, 96, 144);
   font-family: serif;
