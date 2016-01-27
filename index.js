@@ -1,6 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var http = require('http');
+var https = require('https');
+var fs = require('fs');
+var privateKey  = fs.readFileSync('key.pem', 'utf8');
+var certificate = fs.readFileSync('cert.pem', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
 
 var app = express();
 
@@ -20,4 +26,8 @@ app.get('/*', function(req, res){
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.listen(3000);
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(process.env.PORT || 3000);
+httpsServer.listen(process.env.SSLPORT || 4000);
