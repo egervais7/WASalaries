@@ -12,7 +12,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 // var Worker = require('./models/AnnualSalary');
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect('mongodb://localhost/state_workers');
 
 app.use(express.static(path.join(__dirname, 'public')));
 

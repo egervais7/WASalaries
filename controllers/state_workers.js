@@ -8,7 +8,7 @@ router.route('/')
     Worker.find(function(error, workers){
       if (error) return res.status(500).send(error);
       res.json(workers);
-    }).limit(30);
+    }).limit(5000);
   });
 
 router.route('/:id')
