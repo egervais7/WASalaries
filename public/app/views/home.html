@@ -50,3 +50,9 @@
   <div class="col-xs-2">
   </div>
 </div>
+<br>
+<div class="text-center">
+  <button class="btn btn-success" ng-disabled="currentPage <= 0" ng-click="currentPage=currentPage-1"><<</button>
+  <button class="btn btn-success" ng-disabled="currentPage >= numberOfPages()" ng-click="currentPage=currentPage+1">>></button><br>
+  Page {{currentPage+1}} of {{numberOfPages()}}
+</div> 
