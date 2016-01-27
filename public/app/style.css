@@ -8,7 +8,7 @@
 }
 
 .seal {
-  padding: 20px;
+  padding: 10px;
 }
 
 .header {
@@ -39,4 +39,14 @@
 .salary {
   color: rgb(161, 18, 18);
   font-weight: bolder;;
+}
+
+h5 small {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 480px) {
+  .header {
+    font-size: 36px;
+  }
 }
