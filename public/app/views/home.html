@@ -1,14 +1,17 @@
 <h1>Home</h1>
 
-<div class="form-group">
-  <form>
+<form class="form" ng-submit="search()">
+  <div class="form-group">
     <label for="search">Search</label>
-    <input type="text" class="form-control" id="search" ng-model="search">
+    <input type="text" class="form-control" id="search" ng-model="searchTerm">
     <input type="submit">
-  </form>
-</div>
+  </div>
+</form>
 
-<div class="well" ng-repeat="salary in salaries track by salary._id" ng-if="$index < 10">
-  <h1>{{salary.employee_name}} <br>
-    Job Title : {{salary.job_title}} <br><small>2014 salary : {{salary.Sal2014 | currency}}</h1>
-</div>
+<table>
+  <tr ng-repeat="salary in salaries track by salary._id" ng-if="$index < 25">
+    <td>{{salary.employee_name}}</td>
+    <td>Job Title : {{salary.job_title}}</td>
+    <td>2014 salary : {{salary.Sal2014 | currency}}</td>
+  </tr>
+</table>
