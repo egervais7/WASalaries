@@ -17,7 +17,6 @@ $scope.search = function(){
 
 };
 
-
 }])
 .controller('SalaryCtrl', ['$scope', '$routeParams', 'Salary', function($scope, $routeParams, Salary){
 

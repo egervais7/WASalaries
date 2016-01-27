@@ -1,17 +1,49 @@
-<h1>Home</h1>
-
-<form class="form" ng-submit="search()">
-  <div class="form-group">
-    <label for="search">Search</label>
-    <input type="text" class="form-control" ng-model="searchTerm">
-    <input type="submit">
+<div class="row top_row">
+  <div class="col-xs-1 col-md-1">
   </div>
-</form>
-
-<table>
-  <tr ng-repeat="salary in salaries | filter: searchTerm">
-    <td>{{salary.employee_name}}</td>
-    <td>Job Title : {{salary.job_title}}</td>
-    <td>2014 salary : {{salary.Sal2014 | currency}}</td>
-  </tr>
-</table>
+  <div class="col-xs-3 col-md-4">
+    <p class="pull-right header text-center">Washington State</p>
+  </div>
+  <div class="col-xs-4 col-md-2">
+      <img src="app/assets/wash_seal.png" class="img-responsive seal center-block">
+  </div>
+  <div class="col-xs-3 col-md-4">
+    <p class="pull-left header text-center">Salary Information</p>
+  </div>
+  <div class="col-xs-1 col-md-1">
+  </div>
+</div>  <!-- row -->
+<div class="row">
+  <div class="col-xs-4">
+  </div>
+  <div class="col-xs-4">
+    <form class="search_box form-inline text-center" ng-submit="search()">
+      <div class="form-group">
+        <div class="inline-group">
+          <input type="text" class="form-control" ng-model="searchTerm" placeholder="Search">
+        </div>
+      </div>
+        <input type="submit" class="btn btn-warning">
+    </form>
+  </div>
+  <div class="col-xs-4">
+  </div>
+</div> <!-- row -->
+<div class="row">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-8">
+    <div class="results text-center well" ng-repeat="salary in salaries | filter: searchTerm">
+    <h3 class="name">{{salary.employee_name}}</h3>
+    <h4 class="job_title">
+      {{salary.job_title}} :
+    <span class="salary">
+      {{salary.Sal2014 | currency:undefined:0}}
+    </span>
+    </h4>
+      <h5><small>{{salary.Agency_Title}}</small></h5>
+    </div>
+  </div>
+  <div class="col-xs-2">
+  </div>
+</div>

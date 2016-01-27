@@ -1,0 +1,52 @@
+.row {
+  background-color: rgb(76, 117, 89);
+}
+
+.top_row {
+    background-color: rgb(124, 106, 75);
+    margin-bottom: 20px;
+}
+
+.seal {
+  padding: 10px;
+}
+
+.header {
+  font-size: 45px;
+  margin-top: 50px;
+  font-family: serif;
+  color: rgb(255, 255, 255);
+}
+
+.search_box {
+  margin-top: 25px;
+}
+
+.results {
+  margin-top: 25px;
+}
+
+.name {
+  color: rgb(88, 96, 144);
+  font-family: serif;
+  font-weight: bold;
+}
+
+.job_title {
+  font-size: 16px;
+}
+
+.salary {
+  color: rgb(161, 18, 18);
+  font-weight: bolder;;
+}
+
+h5 small {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 480px) {
+  .header {
+    font-size: 36px;
+  }
+}
