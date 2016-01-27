@@ -7,8 +7,15 @@ $scope.searchTerm = '';
 Salary.query(function success(data){
   console.log("inside the query");
   console.log($scope.searchTerm);
-  console.log(data.length);
+  console.log(data);
   $scope.salaries = data;
+  $scope.sum = 0;
+
+  for (var i = 0; i < $scope.salaries.length; i++) {
+    var salary = parseInt($scope.salaries[i].Sal2014);
+    $scope.sum += salary;
+  }
+
 }, function error(data){
   console.log(data);
 });
