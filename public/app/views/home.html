@@ -3,13 +3,13 @@
 <form class="form" ng-submit="search()">
   <div class="form-group">
     <label for="search">Search</label>
-    <input type="text" class="form-control" id="search" ng-model="searchTerm">
+    <input type="text" class="form-control" ng-model="searchTerm">
     <input type="submit">
   </div>
 </form>
 
 <table>
-  <tr ng-repeat="salary in salaries track by salary._id" ng-if="$index < 25">
+  <tr ng-repeat="salary in salaries | filter: searchTerm">
     <td>{{salary.employee_name}}</td>
     <td>Job Title : {{salary.job_title}}</td>
     <td>2014 salary : {{salary.Sal2014 | currency}}</td>
