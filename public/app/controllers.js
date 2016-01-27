@@ -4,15 +4,17 @@ angular.module('SalaryCtrls', ['SalaryServices'])
 $scope.salaries = [];
 $scope.searchTerm = '';
 
+Salary.query(function success(data){
+  console.log("inside the query");
+  console.log($scope.searchTerm);
+  console.log(data.length);
+  $scope.salaries = data;
+}, function error(data){
+  console.log(data);
+});
+
 $scope.search = function(){
-  Salary.query(function success(data){
-    console.log("inside the query");
-    console.log($scope.searchTerm);
-    console.log(data.length);
-    $scope.salaries = data;
-  }, function error(data){
-    console.log(data);
-  });
+
 };
 
 
